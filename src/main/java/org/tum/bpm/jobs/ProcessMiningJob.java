@@ -86,19 +86,6 @@ public class ProcessMiningJob {
             
         }).sinkTo(HeuristicNetMongoSink.createHeuristicNetSink());
 
-        // final FileSink<DeviceOcelEvent> sink = FileSink
-        // .forRowFormat(new Path("output.json"), new
-        // SimpleStringEncoder<DeviceOcelEvent>("UTF-8"))
-        // .withRollingPolicy(
-        // DefaultRollingPolicy.builder()
-        // .withRolloverInterval(TimeUnit.MINUTES.toMillis(15))
-        // .withInactivityInterval(TimeUnit.MINUTES.toMillis(5))
-        // .withMaxPartSize(1024 * 1024 * 1024)
-        // .build())
-        // .build();
-        // sourceStream.filter(event ->
-        // event.getDevice().equals("23005663")).sinkTo(sink);
-
         // Execute program, beginning computation.
         env.execute("Flink Java API Skeleton");
     }
